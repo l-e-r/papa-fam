@@ -1,0 +1,9 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 0;
+}
+
+.header__logo {
+  width: 13rem;
+}

@@ -1,0 +1,10 @@
+.taskList {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+  margin-top: 1.25rem;
+  align-items: center;
+  font-size: 1.25rem;
+  color: gray;
+}

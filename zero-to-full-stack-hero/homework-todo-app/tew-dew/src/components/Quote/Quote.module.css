@@ -1,0 +1,19 @@
+.quote {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 0;
+  max-width: 75%;
+}
+
+.quote__text {
+  color: dimgray;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.quote__author {
+  color: gray;
+  font-size: 0.75rem;
+  line-height: 2rem;
+  text-align: right;
+}

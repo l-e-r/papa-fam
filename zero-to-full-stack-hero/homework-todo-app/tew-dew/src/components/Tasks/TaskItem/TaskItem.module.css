@@ -1,0 +1,94 @@
+.taskItem {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  width: 100%;
+  height: 2rem;
+  border: 1px solid lightgray;
+  border-radius: 1rem;
+  padding: 0.75rem;
+  margin: 0.75rem 0;
+  vertical-align: middle;
+}
+
+.taskItem:hover,
+.taskItem:focus-within {
+  box-shadow: 0 10px 6px -6px lightgray;
+}
+
+.taskItem__checkbox {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: solid 1px lightgray;
+  border-radius: 0.25rem;
+  margin: 0.25rem;
+}
+
+.taskItem__checkbox_done {
+  height: 100%;
+}
+
+.taskItem__input {
+  border: none;
+  height: 100%;
+  font-size: 1.25rem;
+  flex-grow: 1;
+  width: 50%;
+  padding-left: 0.5rem;
+  text-transform: uppercase;
+  background-color: transparent;
+}
+
+.taskItem__input:focus-within {
+  outline: none;
+}
+
+.taskItem__input::selection {
+  background-color: yellow;
+}
+
+.taskItem__input_completed {
+  color: green;
+  text-decoration: line-through;
+}
+
+.taskItem__edit {
+  color: gray;
+}
+
+.taskItem__save {
+  color: green;
+}
+
+.taskItem__cancel {
+  color: gray;
+}
+
+.taskItem__remove {
+  color: red;
+}
+
+.taskItem__edit,
+.taskItem__save,
+.taskItem__cancel,
+.taskItem__remove {
+  width: 1.75rem;
+  padding: 0 0.5rem;
+  opacity: 0.5;
+}
+
+.taskItem__checkbox:hover,
+.taskItem__edit:hover,
+.taskItem__save:hover,
+.taskItem__cancel:hover,
+.taskItem__remove:hover {
+  transform: scale(1.25);
+  cursor: pointer;
+  opacity: 1;
+}
+
+.taskItem__seperator {
+  width: 0px;
+  height: 100%;
+  border: 1px solid lightgray;
+}
