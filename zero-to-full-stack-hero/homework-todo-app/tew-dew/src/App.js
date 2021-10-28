@@ -1,3 +1,4 @@
+import React from 'react';
 import { Header, Quote, Tasks } from './components';
 
 import styles from './App.module.css';

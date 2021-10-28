@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { PencilIcon, CheckIcon, XIcon, TrashIcon } from '@heroicons/react/solid'
 
 import { check } from '../../../assets';
