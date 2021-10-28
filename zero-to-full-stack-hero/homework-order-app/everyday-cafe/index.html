@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Everyday Cafe - Lunch Special</title>
+  </head>
+  <body>
+    <div class="order">
+      <div class="order__header">
+        <h2 class="header__title">Everyday Cafe</h2>
+        <label class="header__subtitle"><b>Lunch Special</b></label>
+      </div>
+      <hr />
+      <div class="hours">Monday thru Friday, 11am ~ 3pm</div>
+      <br />
+      <div>9.95 plus tax</div>
+      <div>includes sandwish, snack and drink</div>
+      <br />
+      <form method="get" class="order__form">
+        <fieldset class="order__info">
+          <legend>Order Information</legend>
+          <div>
+            <div>
+              <label><b>Name</b></label>
+              <input type="text" required />
+            </div>
+            <br />
+            <div class="order-type">
+              <div class="order-type__option">
+                <input
+                  type="radio"
+                  id="here"
+                  name="order_type"
+                  value="here"
+                  required
+                />
+                <label for="here">Here</label>
+              </div>
+              <div class="order-type__option">
+                <input
+                  type="radio"
+                  id="to_go"
+                  name="order_type"
+                  value="to_go"
+                />
+                <label for="to_go">To Go</label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <br />
+        <fieldset class="order__sandwich">
+          <legend>Sandwich</legend>
+
+          <div>
+            <label><b>Monday</b></label>
+            <div class="sandwich__option">
+              <input
+                type="radio"
+                id="tomato_mozzarella"
+                name="sandwich"
+                value="tomato_mozzarella"
+                required
+              />
+              <label for="tomato_mozzarella">Tomato Mozzarella</label>
+            </div>
+            <div class="sandwich__option">
+              <input
+                type="radio"
+                id="chicken_salad"
+                name="sandwich"
+                value="chicken_salad"
+              />
+              <label for="chicken_salad">Chicken Salad</label>
+            </div>
+          </div>
+          <br />
+          <div>
+            <label><b>Tuesday</b></label>
+            <div class="sandwich__option">
+              <input
+                type="radio"
+                id="greek_salad_wrap"
+                name="sandwich"
+                value="greek_salad_wrap"
+              />
+              <label for="greek_salad_wrap">Greek Salad Wrap</label>
+            </div>
+            <div class="sandwich__option">
+              <input
+                type="radio"
+                id="toto_wrap"
+                name="sandwich"
+                value="toto_wrap"
+              />
+              <label for="toto_wrap">Toto Wrap</label>
+            </div>
+          </div>
+          <br />
+          <div>
+            <label><b>Wednesday</b></label>
+            <div class="sandwich__option">
+              <input
+                type="radio"
+                id="red_pepper_hummus"
+                name="sandwich"
+                value="red_pepper_hummus"
+              />
+              <label for="red_pepper_hummus">Red Pepper Hummus</label>
+            </div>
+            <div class="sandwich__option">
+              <input
+                type="radio"
+                id="roasted_turkey"
+                name="sandwich"
+                value="roasted_turkey"
+              />
+              <label for="roasted_turkey">Roasted Turkey</label>
+            </div>
+          </div>
+          <br />
+          <div>
+            <label><b>Thursday</b></label>
+            <div class="sandwich__option">
+              <input
+                type="radio"
+                id="carrot_ginger_hummus_wrap"
+                name="sandwich"
+                value="carrot_ginger_hummus_wrap"
+              />
+              <label for="carrot_ginger_hummus_wrap"
+                >Carrot-Ginger Hummus Wrap</label
+              >
+            </div>
+            <div class="sandwich__option">
+              <input
+                type="radio"
+                id="egg_salad"
+                name="sandwich"
+                value="egg_salad"
+              />
+              <label for="egg_salad">Egg Salad</label>
+            </div>
+          </div>
+          <br />
+          <div>
+            <label><b>Friday</b></label>
+            <div class="sandwich__option">
+              <input
+                type="radio"
+                id="dado_wrap"
+                name="sandwich"
+                value="dado_wrap"
+              />
+              <label for="dado_wrap">Dado Wrap</label>
+            </div>
+            <div class="sandwich__option">
+              <input
+                type="radio"
+                id="tuna_salad"
+                name="sandwich"
+                value="tuna_salad"
+              />
+              <label for="tuna_salad">Tuna Salad</label>
+            </div>
+          </div>
+          <hr style="width: 100%" />
+
+          <div class="gluten__option">
+            <input
+              type="checkbox"
+              id="gluten_free_bread"
+              value="gluten_free_bread"
+            />
+            <label for="gluten_free_bread"
+              >Gluten Free Bread (0.75 extra)</label
+            >
+          </div>
+        </fieldset>
+        <br />
+        <fieldset class="order__snack">
+          <legend>Snack</legend>
+
+          <label><b>Snacks</b></label>
+          <div class="snack__option">
+            <input
+              type="radio"
+              id="apple"
+              name="snack"
+              value="apple"
+              required
+            />
+            <label for="apple">Apple</label>
+          </div>
+          <div class="snack__option">
+            <input type="radio" id="banana" name="snack" value="banana" />
+            <label for="banana">Banana</label>
+          </div>
+          <div class="snack__option">
+            <input
+              type="radio"
+              id="potato_chips"
+              name="snack"
+              value="potato_chips"
+            />
+            <label for="potato_chips">Potato Chips</label>
+          </div>
+        </fieldset>
+        <br />
+        <fieldset class="order__drink">
+          <legend>Drink (regular size)</legend>
+
+          <label for="drink_select"><b>Drinks</b></label>
+          <div class="drink__option">
+            <select id="drink_select" name="drink" required>
+              <optgroup>
+                <option value="">-- Please choose an option --</option>
+              </optgroup>
+              <optgroup label="Black Tea">
+                <option value="hot_keemun">Hot Keemun</option>
+                <option value="hot_decaf_keemun">Hot Decaf Keemun</option>
+                <option value="iced_keemun">Iced Keemun</option>
+                <option value="iced_decaf_keemun">Iced Decaf Keemun</option>
+              </optgroup>
+              <optgroup label="Green Tea">
+                <option value="hot_sencha">Hot Sencha</option>
+                <option value="hot_decaf">Hot Decaf</option>
+                <option value="iced_sencha">Iced Sencha</option>
+                <option value="iced_decaf">Iced Decaf</option>
+              </optgroup>
+              <optgroup label="Coffee">
+                <option value="hot_coffee">Hot Coffee</option>
+                <option value="hot_decaf_coffee">Hot Decaf Coffee</option>
+                <option value="iced_coffee">Iced Coffee</option>
+                <option value="iced_decaf_coffee">Iced Decaf Coffee</option>
+              </optgroup>
+              <optgroup label="Bubble Tea (1.50 extra)">
+                <option value="bubble_tea">Bubble Tea</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <hr style="width: 100%" />
+
+          <div class="large__option">
+            <input type="checkbox" id="large_drink" />
+            <label for="large_drink">Large Drink (0.75 extra)</label>
+          </div>
+        </fieldset>
+        <br />
+        <div class="order__actions">
+          <button class="order__submit" type="submit">Place Order</button>
+          <button class="order__cancel">Cancel</button>
+        </div>
+      </form>
+      <br />
+      <div class="order__footer">
+        <label><b>~ NO SUBSTITUTIONS ~</b></label>
+      </div>
+    </div>
+  </body>
+</html>
