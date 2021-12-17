@@ -20,7 +20,17 @@ const Login = () => {
                     />
                 {/* </div> */}
                 <button
-                    onClick={authenticate}
+                    onClick={() => {
+                        authenticate({ 
+                            provider: "metamask",
+                            mobileLinks: [
+                                "metamask",
+                                "trust",
+                                "walletconnect",
+                              ] 
+                          
+                        })
+                    }}
                     className='bg-[#fdd201] rounded-lg py-2 px-4 font-bold items-center'
                 >
                     Connect Wallet
