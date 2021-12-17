@@ -22,23 +22,27 @@ const Login = () => {
                 <button
                     onClick={() => {
                         authenticate({ 
-                            provider: "metamask",
+                            provider: "metamask"
+                        })
+                    }}
+                    className='bg-white rounded-lg pt-2 px-4 font-bold items-center'
+                >
+                    <Image src='/images/metamask.svg' height={40} width={150} />
+                </button>
+                <button
+                    onClick={() => {
+                        authenticate({ 
+                            provider: "walletconnect",
                             mobileLinks: [
                                 "metamask",
                                 "trust",
-                                "walletconnect",
                               ] 
-                          
                         })
                     }}
-                    className='bg-[#fdd201] rounded-lg py-2 px-4 font-bold items-center'
+                    className='bg-white rounded-lg pt-1 px-4 font-bold items-center'
                 >
-                    Connect Wallet
+                    <Image src='/images/walletconnect.svg' height={40} width={150} />
                 </button>
-            </div>
-            <div className='w-full h-screen'>
-                {/* Background Image */}
-                {/* <Image src='https://links.papareact.com/55n' layout='fill' objectFit='cover' /> */}
             </div>
         </div>
     )
