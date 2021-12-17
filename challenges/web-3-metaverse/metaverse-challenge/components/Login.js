@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useMoralis } from 'react-moralis';
-import { HiChat } from "react-icons/hi";
+import { BrowserView } from 'react-device-detect';
 
 const Login = () => {
     const { authenticate } = useMoralis();
@@ -11,24 +11,24 @@ const Login = () => {
                 <label className='text-5xl pb-10 text-[#fdd201]'>
                     <span className="font-thin">Meta</span>Chat
                 </label>
-                {/* <div className='flex flex-col h-32 w-32 mb-10 bg-[#fdd201] rounded-full items-center justify-center opacity-50'> */}
-                    <Image
-                        className=' rounded-full opacity-50'
-                        src='/images/logo.jpg'
-                        height={150}
-                        width={150}
-                    />
-                {/* </div> */}
-                <button
-                    onClick={() => {
-                        authenticate({ 
-                            provider: "metamask"
-                        })
-                    }}
-                    className='bg-white rounded-lg pt-2 px-4 font-bold items-center'
-                >
-                    <Image src='/images/metamask.svg' height={40} width={150} />
-                </button>
+                <Image
+                    className=' rounded-full opacity-50'
+                    src='/images/logo.jpg'
+                    height={150}
+                    width={150}
+                />
+                <BrowserView>
+                    <button
+                        onClick={() => {
+                            authenticate({ 
+                                provider: "metamask"
+                            })
+                        }}
+                        className='bg-white rounded-lg pt-2 px-4 font-bold items-center'
+                    >
+                        <Image src='/images/metamask.svg' height={40} width={150} />
+                    </button>
+                </BrowserView>
                 <button
                     onClick={() => {
                         authenticate({ 
