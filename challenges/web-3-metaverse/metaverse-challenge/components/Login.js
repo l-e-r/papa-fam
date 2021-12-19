@@ -8,15 +8,6 @@ const Login = () => {
     return (
         <div className="">
             <div className='flex flex-col absolute z-50 h-4/6 w-full items-center justify-center space-y-10'>
-                <label className='text-5xl pb-10 text-[#fdd201]'>
-                    <span className="font-thin">Meta</span>Chat
-                </label>
-                <Image
-                    className=' rounded-full opacity-50'
-                    src='/images/logo.jpg'
-                    height={150}
-                    width={150}
-                />
                 <BrowserView>
                     <button
                         onClick={() => {

@@ -1,21 +1,27 @@
+import { useState } from 'react';
 import Head from 'next/head'
-import Container from '../components/Container';
-import Login from '../components/Login'
-import Chat from '../components/Chat';
 import { useMoralis } from 'react-moralis';
+
+import Header from '../components/Header';
+import WalletConnector from '../components/WalletConnector';
+import Chat from '../components/Chat';
 
 
 export default function Home() {
   const { isAuthenticated } = useMoralis();
+  const [isHeaderReady, setIsHeaderReady] = useState(false);
 
   return (
-    <Container>
+    <div className='h-screen bg-gradient-to-b from-black via-black to-yellow-500 overflow-hidden'>
       <Head>
         <title>MetaChat</title>
         <link rel="icon" href="/favicon.svg" />
       </Head>
-      { isAuthenticated ? <Chat /> : <Login /> }
-    </Container>
+        <div className='h-screen max-w-screen-sm mx-auto overflow-y-scroll scrollbar-hide' >
+          <Header onLoaded={setIsHeaderReady} />
+          { isHeaderReady ? isAuthenticated ? <Chat /> : <WalletConnector /> : null}
+        </div>
+    </div>
   )
 }
- 
+  
