@@ -26,8 +26,12 @@ const Messages = () => {
 
 
     return (
-        <div className='pb-56'>
+        <div className='pb-28 z-20'>
             
+            <div className='flex justify-center opacity-50 scale-75'>
+                    <ByMoralis variant='dark' style={{ marginLeft: 'auto', marginRight: 'auto'}} />
+            </div>
+
             <div className='space-y-10 p-4'>
                 {data.map(message => (
                     <Message key={message.id} message={message} />
@@ -36,9 +40,6 @@ const Messages = () => {
 
             <div className='flex justify-center'>
                 <SendMessage endOfMessagesRef={endOfMessagesRef} />
-                <div className='flex fixed bottom bottom-0 opacity-50 scale-75'>
-                    <ByMoralis variant='dark' style={{ marginLeft: 'auto', marginRight: 'auto'}} />
-                </div>
             </div>
 
             <div

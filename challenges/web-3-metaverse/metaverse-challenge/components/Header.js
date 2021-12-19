@@ -18,7 +18,7 @@ const Header = ({onLoaded}) => {
     }, []);
 
     return (
-        <div className='flex flex-col text-[#fdd201] sticky top-0 z-50 shadow-sm bg-black'>
+        <div className='flex flex-col text-[#fdd201] sticky top-0 z-30 shadow-sm bg-black'>
             {!isAuthenticated && animateHeader ?
                 <div className='flex flex-row justify-center'>
                     <motion.div initial={{y: 500, scale: 1.0}} animate={{y: 10, scale: 0.5,}} transition={{delay: 2, duration: 1}}>

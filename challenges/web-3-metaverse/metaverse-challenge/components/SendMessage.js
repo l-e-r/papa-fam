@@ -32,7 +32,7 @@ const SendMessage = ({endOfMessagesRef})  => {
     };
 
     return (
-        <form className='flex fixed bottom bottom-16 bg-black opacity-80 w-11/12 px-6 py-4 max-w-xl shadow-2xl rounded-full border-4 border-yellow-200'>
+        <form className='flex fixed bottom bottom-5 bg-black opacity-80 w-11/12 px-6 py-4 max-w-xl shadow-2xl rounded-full border-4 border-yellow-200'>
             <input
                 type='text'
                 className='flex-grow outline-none bg-transparent text-white placeholder-gray-500 pr-5'
