@@ -17,7 +17,7 @@ export default function Home() {
         <title>MetaChat</title>
         <link rel="icon" href="/favicon.svg" />
       </Head>
-        <div className='h-screen max-w-screen-sm mx-auto overflow-y-scroll scrollbar-hide' >
+        <div className='h-screen max-w-screen-sm mx-auto overflow-y-scroll scrollbar-hide scrollbar-hide' >
           <Header onLoaded={setIsHeaderReady} />
           { isHeaderReady ? isAuthenticated ? <Chat /> : <WalletConnector /> : null}
         </div>
