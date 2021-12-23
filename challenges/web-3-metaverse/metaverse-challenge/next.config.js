@@ -3,7 +3,7 @@ module.exports = {
     images: {
         domains: ["avatars.dicebear.com",
                   "links.papareact.com",
-                  "unsplash.com/photos",
+                  "unsplash.com",
                   "metamask.io"
                 ]
     }

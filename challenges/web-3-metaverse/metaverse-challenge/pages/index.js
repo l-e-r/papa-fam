@@ -1,27 +1,23 @@
-import { useState } from 'react';
-import Head from 'next/head'
-import { useMoralis } from 'react-moralis';
+import Head from "next/head";
+import Image from "next/image";
 
-import Header from '../components/Header';
-import WalletConnector from '../components/WalletConnector';
-import Chat from '../components/Chat';
+import { SplashContainer } from "../components/SplashContainer";
+import { ChatApp } from "./ChatApp";
 
 
 export default function Home() {
-  const { isAuthenticated } = useMoralis();
-  const [isHeaderReady, setIsHeaderReady] = useState(false);
+    return (
+        <div className='w-screen h-screen bg-[#02224e]'>
+            <Head>
+                <title>MetaChat</title>
+                <link rel="icon" href="/favicon.svg" />
+            </Head>
+            <Image src='/images/background.jpg' layout='fill' objectFit="cover" />
 
-  return (
-    <div className='h-screen bg-gradient-to-b from-black via-black to-yellow-500 overflow-hidden'>
-      <Head>
-        <title>MetaChat</title>
-        <link rel="icon" href="/favicon.svg" />
-      </Head>
-        <div className='h-screen max-w-screen-sm mx-auto overflow-y-scroll scrollbar-hide scrollbar-hide' >
-          <Header onLoaded={setIsHeaderReady} />
-          { isHeaderReady ? isAuthenticated ? <Chat /> : <WalletConnector /> : null}
+            {/* Higher-Order Component to render splash screen then child components */}
+            <SplashContainer>
+                <ChatApp />
+            </SplashContainer>
         </div>
-    </div>
-  )
+    )
 }
-  

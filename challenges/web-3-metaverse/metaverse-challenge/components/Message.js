@@ -5,7 +5,7 @@ import Avatar from "./Avatar";
 const Message = ({ message }) => {
     const { user } = useMoralis();
 
-    const isUserMessage = message.get('ethAddress') === user.get('ethAddress');
+    const isUserMessage = message.get('userId') === user.id;
 
     return (
         <div className={`flex items-end space-x-2 relative ${isUserMessage && 'justify-end'}`}>

@@ -16,7 +16,7 @@ const WalletConnector = () => {
     setOptionsExpanded(!optionsExpanded);
   }
   return (
-    <div className='flex flex-col h-4/6 width-full items-center justify-center'>
+    <div className='flex flex-col relative h-screen w-full items-center justify-center'>
       {isAuthenticating ? 
         <div className='flex flex-col items-center justify-center '>
            <RingLoader color={"#fdd201"} loading={isAuthenticating} size={120} />
@@ -25,7 +25,7 @@ const WalletConnector = () => {
       : (
         <div className='flex flex-col h-2/6 w-48'>
           <button
-          className="flex flex-row justify-between text-black bg-[#fdd201] font-bold rounded-lg text-sm px-4 py-3 text-center inline-flex items-center"
+          className="flex flex-row justify-between text-black bg-[#fdd201] font-bold rounded-lg text-sm px-4 py-3 text-center items-center"
           type="button"
           onClick={toggleOptions}>
             <span>Connect Wallet</span>

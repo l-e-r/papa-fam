@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import { useMoralis } from 'react-moralis';
+import { useRecoilValue } from 'recoil';
+import { ActiveChatState } from '../atoms/ChatState.atom';
 
 const SendMessage = ({endOfMessagesRef})  => {
     const { user, Moralis } = useMoralis();
     const [ message, setMessage ] = useState(null);
+    const activeChatId = useRecoilValue(ActiveChatState);
 
     const sendMessage = (e) => {
         e.preventDefault();
@@ -16,7 +19,8 @@ const SendMessage = ({endOfMessagesRef})  => {
         messages.save({
             message: message,
             username: user.getUsername(),
-            ethAddress: user.get('ethAddress')
+            userId: user.id,
+            chatId: activeChatId
         }).then(
             (message) => {
                 // successfully saved message
