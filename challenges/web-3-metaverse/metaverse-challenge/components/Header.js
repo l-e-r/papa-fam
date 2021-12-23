@@ -27,12 +27,16 @@ import { useChat } from '../hooks/useChat';
 
 import { ActiveChatState, UserChatsState } from '../atoms/ChatState.atom';
 import { useRecoilState, useRecoilValue } from 'recoil';
+import { TextField } from '@mui/material';
 
 
 export const Header = () => {
-    const { user, Moralis, logout } = useMoralis();
+    const { user, Moralis, logout, setUserData } = useMoralis();
     const [ isNewChatModalOpen, setIsNewChatModalOpen ] = useState(false);
+    const [ isUpdateProfileOpen, setIsUpdateProfileOpen ] = useState(false);
     const [ isChatListOpen, setIsChatListOpen ] = useState(false);
+    const [ username, setUsername ] = useState(null);
+
     const users = useUsers();
     const { Chat } = useChat();
     const userChats = useRecoilValue(UserChatsState);
@@ -40,6 +44,7 @@ export const Header = () => {
 
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
+
     const handleClick = (event) => {
       setAnchorEl(event.currentTarget);
     };
@@ -47,10 +52,24 @@ export const Header = () => {
       setAnchorEl(null);
     };
 
+    const submitUsername = (e) => {
+        // const username = prompt(`Enter your new Username (current: ${user.getUsername()})`);
+        e.preventDefault();
 
-    function togglNewChateModal() {
+        if (!username) return;
+
+        setUserData({username: username});
+        setUsername('');
+        toggleUpdateProfileModal();
+    }
+
+    function toggleNewChateModal() {
         setIsNewChatModalOpen(!isNewChatModalOpen);
         setSelectedUser([]);
+    }
+
+    function toggleUpdateProfileModal() {
+        setIsUpdateProfileOpen(!isUpdateProfileOpen);
     }
 
     function toggleChatListDrawer() {
@@ -109,7 +128,7 @@ export const Header = () => {
                     </Drawer>
                 </div>
                 <div className='fixed left-20 sm:left-28 mt-2 sm:mt-0 '>
-                    <button onClick={togglNewChateModal} className='text-4xl sm:text-5xl text-green-500'> 
+                    <button onClick={toggleNewChateModal} className='text-4xl sm:text-5xl text-green-500'> 
                         <RiChatNewLine />
                     </button>
                 </div>
@@ -136,14 +155,14 @@ export const Header = () => {
                         'aria-labelledby': 'basic-button',
                         }}
                     >
-                        <MenuItem onClick={handleClose}>Profile</MenuItem>
+                        <MenuItem onClick={toggleUpdateProfileModal}>Profile</MenuItem>
                         <MenuItem onClick={logout}>Logout</MenuItem>
                     </Menu>
                 </div>
             </div>
             <Modal
                 open={isNewChatModalOpen}
-                onClose={togglNewChateModal}
+                onClose={toggleNewChateModal}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
                 >
@@ -177,8 +196,34 @@ export const Header = () => {
                             ))}
                         </List>
                         <div className='flex flex-row justify-center items-center space-x-5'>
-                            <Button variant="contained" onClick={() =>{ Chat.create(selectedUser); togglNewChateModal();}} disabled={!selectedUser.length}>Create</Button>
-                            <Button variant="text" onClick={togglNewChateModal}>Cancel</Button>
+                            <Button variant="contained" onClick={() =>{ Chat.create(selectedUser); toggleNewChateModal();}} disabled={!selectedUser.length}>Create</Button>
+                            <Button variant="text" onClick={toggleNewChateModal}>Cancel</Button>
+                        </div>
+                    </Box>
+                </Modal>
+                <Modal
+                open={isUpdateProfileOpen}
+                onClose={toggleUpdateProfileModal}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+                >
+                    <Box className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 md:w-1/2 lg:w-1/3 bg-slate-200 border-2 border-white shadow-sm  p-4 rounded-lg space-y-5'>
+                        <Typography id="modal-modal-title" variant="h6" component="h2">
+                        Update Profile
+                        </Typography>
+                        <TextField
+                            required
+                            fullWidth
+                            margin='normal'
+                            id="standard-required"
+                            label="Username"
+                            defaultValue={user.getUsername()}
+                            variant="standard"
+                            onChange={(e) => setUsername(e.target.value)}
+                        />
+                        <div className='flex flex-row justify-center items-center space-x-5'>
+                            <Button variant="contained" onClick={submitUsername}>Update</Button>
+                            <Button variant="text" onClick={toggleUpdateProfileModal}>Cancel</Button>
                         </div>
                     </Box>
                 </Modal>
