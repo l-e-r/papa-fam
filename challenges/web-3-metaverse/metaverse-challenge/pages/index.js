@@ -7,7 +7,7 @@ import { ChatApp } from "../components/ChatApp";
 
 export default function Home() {
     return (
-        <div className='w-screen h-screen bg-[#02224e]'>
+        <div className='w-screen h-screen bg-[#02224e] overflow-hidden'>
             <Head>
                 <title>MetaChat</title>
                 <link rel="icon" href="/favicon.svg" />

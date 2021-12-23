@@ -30,7 +30,7 @@ export const SplashContainer = ({children}) => {
 
     const renderConnector = () => (
         <>
-                <div className='flex flex-col absolute h-full w-full items-center mt-5'>
+                <div className='flex flex-col absolute h-fill w-full items-center mt-5'>
                     <Logo />
                 </div>
 

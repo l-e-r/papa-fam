@@ -1,6 +1,6 @@
+import { useEffect } from 'react';
 import { useRef } from 'react';
 import { useMoralis, useMoralisQuery } from 'react-moralis';
-import { useEffect } from 'react/cjs/react.development';
 import { useRecoilValue } from 'recoil';
 import { ActiveChatState } from '../atoms/ChatState.atom';
 

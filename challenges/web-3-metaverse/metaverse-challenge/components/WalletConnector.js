@@ -33,7 +33,7 @@ const WalletConnector = () => {
           </button>
 
           {/* Dropdown menu */}
-          <div className={`${!optionsExpanded ? "hidden" : null} bg-white text-base z-50 list-none  rounded shadow my-1`}>
+          <div className={`${!optionsExpanded ? "hidden" : null} bg-white text-base list-none  rounded shadow my-1`}>
               <ul className="py-1" aria-labelledby="dropdown">
                 <li>
                   <BrowserView>
