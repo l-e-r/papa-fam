@@ -8,8 +8,8 @@
 import { useRecoilValue } from 'recoil';
 import { ActiveChatState } from '../atoms/ChatState.atom';
 
-import Header from '../components/Header';
-import Messages from '../components/Messages';
+import Header from './Header';
+import Messages from './Messages';
 
 
 export const ChatApp = () => {
