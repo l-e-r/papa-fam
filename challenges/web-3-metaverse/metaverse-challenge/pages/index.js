@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 
 import { SplashContainer } from "../components/SplashContainer";
-import { ChatApp } from "..componenets/ChatApp";
+import { ChatApp } from "../components/ChatApp";
 
 
 export default function Home() {
